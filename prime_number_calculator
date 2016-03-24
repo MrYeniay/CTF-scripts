@@ -1,0 +1,40 @@
+#include <stdlib.h>
+#include <iostream>
+
+bool is_prime(int val);
+
+int main(int argc, char *argv[])
+{
+    int N, cur_prime=1,sum=2;
+
+    if(argc<2 || argc>2)
+    {
+        std::cout<<"right usage is: prime_c NUM";
+        return 0;
+    }
+
+    N = atoi(argv[1]);
+    for(int cur_num=3;cur_prime<N;cur_num+=2){
+        if(is_prime(cur_num)){
+            sum += cur_num;
+            cur_prime++;
+        }
+    }
+    std::cout<<sum;
+
+
+
+}
+
+bool is_prime(int val){
+
+	if(val%2==0)
+		return false;
+	else
+		for(int i=3;i<val;i++){
+			if(val%i==0)
+				return false;
+}
+		return true;
+
+}
